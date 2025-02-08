@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    
+    body {
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    
+    header {
+      background-color: #333;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4CAF50;
+    }
+
+    
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      margin-top: 80px; 
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin: 10px 0;
+      height: 20px;
+    }
+
+  </style>
+  <script>
+    function login(event) {
+      event.preventDefault(); 
+
+      
+      var id = document.getElementById("userId").value;
+      var password = document.getElementById("password").value;
+      
+      // Validate the credentials
+      if (id === "29209" && password === "29209") {
+        
+        window.location.href = "admin.php";
+      } else {
+        
+        document.getElementById("errorMsg").textContent = "Invalid ID or Password!";
+      }
+    }
+
+    function clearError() {
+      document.getElementById("errorMsg").textContent = "";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="user.php">Product Entry</a></li>
+        <li><a href="login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <div id="errorMsg" class="error"></div>
+    <form onsubmit="login(event)">
+      <input type="text" id="userId" placeholder="Enter ID" required oninput="clearError()">
+      <input type="password" id="password" placeholder="Enter Password" required oninput="clearError()">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

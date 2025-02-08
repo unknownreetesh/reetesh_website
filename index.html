@@ -1,155 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reetesh Bista</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Store</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
+body, html {
+  height: 100%;  /* Ensure body and html take the full height */
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+  display: flex;  /* Enable flexbox */
+  flex-direction: column;  /* Align content vertically */
+  min-height: 100vh; /* Ensure the body takes full viewport height */
+}
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px;
-        }
+header {
+  background: #333;
+  padding: 10px 20px;
+}
 
-        .navbar a {
-            color: #fff;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .navbar a:hover {
-            background-color: #ddd;
-            color: #333;
-        }
+header nav ul li {
+  margin: 0 15px;
+}
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
 
-        .about, .projects, .contact {
-            margin-bottom: 40px;
-        }
+header nav ul li a:hover {
+  color: #4CAF50;
+}
 
-        .about h2, .projects h2, .contact h2 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?store,shopping') center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+}
 
-        .about p, .contact p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+.hero::after {
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
-        .projects .project {
-            display: inline-block;
-            width: 30%;
-            margin: 10px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.hero .content {
+  position: relative;
+  z-index: 1;
+}
 
-        .projects .project img {
-            width: 100%;
-            border-radius: 5px;
-        }
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
 
-        .projects .project h3 {
-            margin-top: 10px;
-            color: #333;
-        }
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
 
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+.hero button {
+  background: #4CAF50;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero button:hover {
+  background: #45a049;
+}
+
+.features {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;  /* Push the footer to the bottom of the page */
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.1em;
+}
+
+footer a:hover {
+  color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="user.php">Product Entry</a></li>
+        <li><a href="login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-    <h1>My Portfolio</h1>
-</header>
+  <section class="hero">
+    <div class="content">
+      <h1>Welcome to RR GROCESSORY STORE</h1>
+      <p>Your one-stop destination for quality products</p>
+      <button onclick="window.location.href='user.php'">Product Entry</button>
+    </div>
+  </section>
 
-<div class="navbar">
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<div class="container">
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a passionate web developer with experience in HTML, CSS, JavaScript, and more. I enjoy creating beautiful and functional websites that are user-friendly and optimized for performance. My goal is to continually learn new technologies and improve my skills.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        
-        <div class="project">
-            <img src="https://via.placeholder.com/300x200" alt="Project 1">
-            <h3>Project 1</h3>
-            <p>This is a description of project 1. It showcases my skills in HTML, CSS, and JavaScript.</p>
-        </div>
-        
-        <div class="project">
-            <img src="https://via.placeholder.com/300x200" alt="Project 2">
-            <h3>Project 2</h3>
-            <p>This project highlights my ability to integrate APIs and create interactive user interfaces.</p>
-        </div>
-        
-        <div class="project">
-            <img src="https://via.placeholder.com/300x200" alt="Project 3">
-            <h3>Project 3</h3>
-            <p>In this project, I built a responsive website with advanced CSS animations and transitions.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to work with me or just want to say hello, feel free to reach out!</p>
-        <p>Email: resunga190@gmail.com</p>
-    </section>
-
-</div>
-
-<footer class="footer">
-    <p>&copy; 2025 Your Name | All Rights Reserved</p>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 My Store. All rights reserved.</p>
+    <p>
+      <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+      <a href="https://instagram.com" target="_blank">Instagram</a> |
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </p>
+  </footer>
 </body>
 </html>

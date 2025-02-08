@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - My Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .contact-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      width: 100%;
+    }
+    button {
+      padding: 12px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .contact-info {
+      margin-top: 40px;
+      text-align: center;
+      color: #555;
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="user.php">Product Entry</a></li>
+            <li><a href="login.html">Admin</a></li>
+          </ul>
+        </nav>
+      </header>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form action="send_message.php" method="post">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="Your message here" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p>You can also reach us at:</p>
+      <p>Email: resunga190@gmail.com</p>
+      <p>Phone: +977 9869357605</p>
+      <p>Address: Milan Chowk, Tamghas, Nepal</p>
+    </div>
+  </div>
+</body>
+</html>
